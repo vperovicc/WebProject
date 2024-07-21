@@ -1,0 +1,99 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Administrator.css">
+</head>
+<body>
+    <div class="admin">
+        <div class="logout-link">
+            <p>@Html.ActionLink("Log Out", "Index", "Home")</p>
+        </div>
+        <div>
+            <table border="1">
+                <tr><th colspan="7">Prikaz pacijenata</th></tr>
+                <tr>
+                    <th>Korisnicko Ime</th>
+                    <th>JMBG</th>
+                    <th>Sifra</th>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Datum Rodjenja</th>
+                    <th>Email</th>
+                </tr>
+
+                @foreach (var p in ViewBag.pacijenti)
+                {
+                    <tr>
+                        <td>@p.KorIme</td>
+                        <td>@p.Jmbg</td>
+                        <td>@p.Sifra</td>
+                        <td>@p.Ime</td>
+                        <td>@p.Prezime</td>
+                        <td>@p.DatumRodj</td>
+                        <td>@p.Email</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="admin_funkcije">
+
+            <div class="admin_dodaj">
+                <h2>Dodaj Korisnika</h2>
+                <form action="/Admin/DodajPacijenta" method="post">
+                    <p>Korisnicko ime</p>
+                    <input type="text" name="korIme" required />
+                    <p>Jmbg</p>
+                    <input type="text" name="jmbg" required/>
+                    <p>Sifra</p>
+                    <input type="password" name="sifra" required/>
+                    <p>Ime</p>
+                    <input type="text" name="ime" required/>
+                    <p>Prezime</p>
+                    <input type="text" name="prezime" required/>
+                    <p>Datum rodjenja</p>
+                    <input type="datetime" name="datumRodj" required/>
+                    <p>Email</p>
+                    <input type="email" name="email" required/>
+                    <input type="submit" value="Dodaj" />
+                </form>
+            </div>
+
+            <div class="admin_obrisi">
+                <h2>Obrisi Korisnika</h2>
+                <form method="post" action="@Url.Action("ObrisiPacijenta", "Admin")">
+                    <p>Korisnicko ime</p>
+                    <input type="text" name="korIme" required/>
+                    <input type="submit" value="Obrisi"/>
+                </form>
+            </div>
+
+            <div class="admin_azuriraj">
+                <form method="post" action="@Url.Action("AzurirajPacijenta", "Admin")">
+                    <h2>Azuriraj Korisnika</h2>
+                    <p>Korisnik kog zelite da izmenite</p>
+                    <input type="text" name="korImeProvera" required />
+                    <p>Sifra</p>
+                    <input type="password" name="sifra" required />
+                    <p>Ime</p>
+                    <input type="text" name="ime" required />
+                    <p>Prezime</p>
+                    <input type="text" name="prezime" required />
+                    <p>Datum rodjenja</p>
+                    <input type="datetime" name="datumRodj" required />
+                    <p>Email</p>
+                    <input type="email" name="email" required />
+                    <input type="submit" value="Azuriraj" />
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

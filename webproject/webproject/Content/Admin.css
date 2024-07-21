@@ -1,0 +1,223 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin_funkcije{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
+
+.admin {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+    .admin table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .admin th, .admin td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .admin th {
+        font-size: 18px;
+        background-color: #007bff;
+        color: #ffffff;
+    }
+
+    .admin td {
+        font-size: 16px;
+        color: #333;
+    }
+
+.admin_dodaj {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.admin_dodaj p {
+    margin: 10px 0 5px;
+    text-align: left;
+    color: #666;
+}
+
+    .admin_dodaj input[type="text"],
+    .admin_dodaj input[type="password"],
+    .admin_dodaj input[type="datetime"],
+    .admin_dodaj input[type="email"] {
+        width: calc(100% - 24px);
+        padding: 12px;
+        margin: 8px 0;
+        border: 1px solid #007bff;
+        border-radius: 25px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+        .admin_dodaj input[type="text"]:focus,
+        .admin_dodaj input[type="password"]:focus,
+        .admin_dodaj input[type="datetime"]:focus,
+        .admin_dodaj input[type="email"]:focus {
+            border-color: #ff5722;
+            outline: none;
+        }
+
+    .admin_dodaj input[type="submit"] {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        padding: 12px 25px;
+        margin-top: 15px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .admin_dodaj input[type="submit"]:hover {
+            background-color: #ff5722;
+            transform: scale(1.1);
+        }
+
+.admin_dodaj,.admin_azuriraj,.admin_obrisi h2{
+    text-align:center;
+}
+
+
+.admin_obrisi,
+.admin_azuriraj {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    margin-top: 20px;
+    margin-left:5px;
+    margin-right:5px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+
+    .admin_obrisi p,
+    .admin_azuriraj p {
+        margin: 10px 0 5px;
+        text-align: left;
+        color: #666;
+    }
+
+    .admin_obrisi input[type="text"],
+    .admin_obrisi input[type="password"],
+    .admin_obrisi input[type="datetime"],
+    .admin_obrisi input[type="email"],
+    .admin_azuriraj input[type="text"],
+    .admin_azuriraj input[type="password"],
+    .admin_azuriraj input[type="datetime"],
+    .admin_azuriraj input[type="email"] {
+        width: calc(100% - 24px);
+        padding: 12px;
+        margin: 8px 0;
+        border: 1px solid #007bff;
+        border-radius: 25px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+        .admin_obrisi input[type="text"]:focus,
+        .admin_obrisi input[type="password"]:focus,
+        .admin_obrisi input[type="datetime"]:focus,
+        .admin_obrisi input[type="email"]:focus,
+        .admin_azuriraj input[type="text"]:focus,
+        .admin_azuriraj input[type="password"]:focus,
+        .admin_azuriraj input[type="datetime"]:focus,
+        .admin_azuriraj input[type="email"]:focus {
+            border-color: #ff5722;
+            outline: none;
+        }
+
+    .admin_obrisi input[type="submit"],
+    .admin_azuriraj input[type="submit"] {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        padding: 12px 25px;
+        margin-top: 15px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .admin_obrisi input[type="submit"]:hover,
+        .admin_azuriraj input[type="submit"]:hover {
+            background-color: #ff5722;
+            transform: scale(1.1);
+        }
+
+input[type="date"] {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        background: #eee url('calendar-icon.png') no-repeat center;
+        cursor: pointer;
+    }
+
+    input[type="date"]:focus {
+        border-color: #66afe9;
+        outline: none;
+        box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+    }
+
+    input[type="date"]::placeholder {
+        color: #aaa;
+    }
+
+.logout-link{
+    margin-top:20px;
+    width:100px;
+    height:50px;
+    border-radius: 100px;
+    background-color: #007bff;
+    
+}

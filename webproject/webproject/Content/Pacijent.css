@@ -1,0 +1,90 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sve_pacijent {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pacijent {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+    .pacijent table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .pacijent th, .pacijent td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .pacijent th {
+        font-size: 18px;
+        background-color: #007bff;
+        color: #ffffff;
+    }
+
+    .pacijent td {
+        font-size: 16px;
+        color: #333;
+    }
+
+    .pacijent input[type="submit"] {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        padding: 8px 15px;
+        margin-top: 5px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .pacijent input[type="submit"]:hover {
+            background-color: #ff5722;
+            transform: scale(1.1);
+        }
+
+.logout-link {
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+}
+
+    .logout-link p {
+        padding: 5px;
+        color: white;
+    }

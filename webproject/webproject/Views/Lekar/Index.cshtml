@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lekar</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Lekar.css">
+</head>
+<body>
+    <div class="lekar">
+        <div class="logout-link">
+            @Html.ActionLink("Log Out", "Index", "Home")
+        </div>
+        <table border="1">
+            <tr><th colspan="3">Termini</th></tr>
+            <tr>
+                <th>Status termina</th>
+                <th>Datum termina</th>
+            </tr>
+
+            @foreach (var t in ViewBag.termini)
+            {
+                <tr>
+                    <td>@t.Status</td>
+                    <td>@t.ZakazanTermin</td>
+                </tr>
+            }
+        </table>
+
+        <div class="lekar_dodaj">
+            <h3>Dodaj novi termin:</h3>
+            <form method="post" action="/Lekar/KreirajTermin">
+                <label for="datTermina">Datum termina:</label>
+                <input type="datetime-local" id="datTermina" name="datTermina" />
+                <input type="submit" value="Dodaj" />
+            </form>
+        </div>
+
+        <table border="1">
+            <tr><th colspan="3">Prepisane terapije</th></tr>
+            <tr>
+                <th>Pacijent</th>
+                <th>Datum pregleda</th>
+                <th>Opis terapije</th>
+            </tr>
+
+            @foreach (var t in ViewBag.prepisaneTerapije)
+            {
+                foreach (var p in t.Termini)
+                {
+                    <tr>
+                        <td>@t.Prezime @t.Ime</td>
+                        <td>@p.ZakazanTermin</td>
+                        <td>@p.OpisTerapije</td>
+                    </tr>
+                }
+            }
+        </table>
+
+        <div class="lekar_prepis">
+            <h3>Prepisi terapiju pacijentu:</h3>
+            <form method="post" action="/Lekar/PrepisTerapiju">
+                <label for="pacijent">Pacijent:</label>
+                <select id="pacijent" name="pacijent">
+                    @foreach (var p in ViewBag.prosliTermini)
+                    {
+                        <option value="@p.KorIme">@p.Ime @p.Prezime</option>
+                    }
+                </select>
+
+                <label for="opisTerapije">Opis terapije:</label>
+                <input type="text" id="opisTerapije" name="opisTerapije" />
+                <input type="submit" value="Prepisi terapiju" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>

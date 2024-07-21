@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Administratori>
+	<Administrator>
+		<KorIme>perovic</KorIme>
+		<Sifra>perovic123</Sifra>
+		<Ime>Vukasin</Ime>
+		<Prezime>Perovic</Prezime>
+		<DatumRodj>2002-04-25</DatumRodj>
+	</Administrator>
+</Administratori>

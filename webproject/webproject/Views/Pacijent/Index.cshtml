@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pacijent</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Pacijent.css">
+</head>
+<body>
+    <div class="sve_pacijent">
+        <div class="logout-link">
+            @Html.ActionLink("Log Out", "Index", "Home")
+        </div>
+        <div class="pacijent">
+            <table border="1">
+                <tr><th colspan="5">Svi slobodni termini</th></tr>
+                <tr>
+                    <th>Lekar</th>
+                    <th>Status</th>
+                    <th>Datum termina</th>
+                    <th>Zakazivanje termina</th>
+                </tr>
+                @foreach (var p in ViewBag.termini)
+                {
+                    <tr>
+                        <td>@p.Lekar.Ime @p.Lekar.Prezime</td>
+                        <td>@p.Status</td>
+                        <td>@p.ZakazanTermin</td>
+                        <td>
+                            <form action="/Pacijent/ZakaziTermin" method="post">
+                                <input type="hidden" name="korImeLekara" value="@p.Lekar.KorIme" />
+                                <input type="hidden" name="zakazanTermin" value="@p.ZakazanTermin" />
+                                <input type="submit" value="Zakazi" />
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+        <div class="pacijent">
+            <table border="1">
+                <tr><th colspan="2">Prošli termini sa terapijama</th></tr>
+                <tr>
+                    <th>Datum termina</th>
+                    <th>Opis terapije</th>
+                </tr>
+                @foreach (var p in ViewBag.prosliTermini)
+                {
+                        <tr>
+                            <td>@p.ZakazanTermin</td>
+                            <td>@p.OpisTerapije</td>
+                        </tr>
+                    
+                }
+            </table>
+        </div>
+    </div>
+</body>
+</html>
